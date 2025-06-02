@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "author": "Uri Shaked",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard-half", "id": "bb1", "top": -147, "left": -352.4, "attrs": {} },
+    {
+      "type": "board-esp32-devkit-c-v4",
+      "id": "esp",
+      "top": 142.34,
+      "left": -5.9,
+      "rotate": 90,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "ultrasonic1",
+      "top": -113.7,
+      "left": -340.1,
+      "attrs": { "distance": "201" }
+    },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht1",
+      "top": -134.1,
+      "left": -111,
+      "attrs": { "humidity": "0" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "esp:GND.1", "bb1:bn.25", "black", [ "v-47.85", "h-49.6" ] ],
+    [ "esp:5V", "bb1:bp.25", "red", [ "v-67.05", "h67.2", "v-95.1" ] ],
+    [ "bb1:28b.j", "bb1:bn.23", "black", [ "v0" ] ],
+    [ "bb1:26b.j", "esp:15", "blue", [ "v297.6", "h67.2" ] ],
+    [ "bb1:25b.j", "bb1:bp.21", "red", [ "v0" ] ],
+    [ "bb1:10b.j", "bb1:bn.8", "green", [ "v0" ] ],
+    [ "bb1:7b.j", "bb1:bp.6", "green", [ "v0" ] ],
+    [ "ultrasonic1:VCC", "bb1:7b.g", "", [ "$bb" ] ],
+    [ "ultrasonic1:TRIG", "bb1:8b.g", "", [ "$bb" ] ],
+    [ "ultrasonic1:ECHO", "bb1:9b.g", "", [ "$bb" ] ],
+    [ "ultrasonic1:GND", "bb1:10b.g", "", [ "$bb" ] ],
+    [ "dht1:VCC", "bb1:25b.g", "", [ "$bb" ] ],
+    [ "dht1:SDA", "bb1:26b.g", "", [ "$bb" ] ],
+    [ "dht1:NC", "bb1:27b.g", "", [ "$bb" ] ],
+    [ "dht1:GND", "bb1:28b.g", "", [ "$bb" ] ],
+    [ "esp:18", "bb1:9b.j", "green", [ "v38.4", "h-288", "v0", "h-9.6" ] ],
+    [ "esp:5", "bb1:8b.j", "green", [ "v28.8", "h-297.6" ] ]
+  ],
+  "dependencies": {}
+}
