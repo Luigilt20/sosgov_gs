@@ -1,3 +1,6 @@
+#participantes: 
+Luigi Thiengo pires - RM 560755
+Felipe Gomes Molinari Lopes - RM 559885
 
 # Sistema Inteligente de Monitoramento e Alerta de Enchentes
 
